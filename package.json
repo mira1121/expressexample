@@ -1,0 +1,33 @@
+{
+  "name": "express",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "babel-node src/core/index.js",
+    "clean": "rm -rf dist",
+    "build": "npm run clean && mkdir dist && babel src -s -d dist --copy-files",
+    "start_production": "node dist/index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.2",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "express": "^4.17.3",
+    "pg": "^8.7.3",
+    "pg-hstore": "^2.3.4",
+    "sequelize": "^6.17.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.17.6",
+    "@babel/core": "^7.17.5",
+    "@babel/node": "^7.16.8",
+    "@babel/plugin-proposal-class-properties": "^7.16.7",
+    "@babel/plugin-transform-modules-commonjs": "^7.16.8",
+    "@babel/preset-env": "^7.16.11",
+    "babel-eslint": "^10.1.0",
+    "babel-minify": "^0.5.1"
+  }
+}
