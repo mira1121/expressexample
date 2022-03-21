@@ -1,9 +1,9 @@
 import bodyParser from "body-parser";
 import cookieParser from "cookie-parser";
 import cors from "cors";
+import morgan from "morgan";
 import express from "express";
 import router from "../route";
-import logger from "../middlewares/logger";
 
 const run = async () => {
   const app = express();
@@ -13,8 +13,8 @@ const run = async () => {
     origin: "*",
     methods: "GET,POST",
   };
-  app.use(logger);
   app.use(cors(corsop));
+  app.use(morgan("dev"));
   app.use(bodyParser.json({ limit: "50mb" }));
   app.use(bodyParser.urlencoded({ extended: true }));
   app.use(router);
